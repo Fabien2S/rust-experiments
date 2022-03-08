@@ -1,11 +1,7 @@
 fn main() {
-    let mut str = String::new();
-    str.push_str("Hello");
-    str.push_str(", world!");
-
+    let mut str = String::from("Hello world!");
     print_my_string(&str);
-
-    str.push_str(" It's working!");
+    append_text_to_my_string(&mut str);
     print_my_string(&str);
 
     if is_result_of_x_by_y_larger_than_x(2, 4) {
@@ -16,7 +12,11 @@ fn main() {
 }
 
 fn print_my_string(str: &String) {
-    println!("{}", str);
+    println!("My string is \"{}\"", str);
+}
+
+fn append_text_to_my_string(str: &mut String) {
+    str.push_str(" It's working!");
 }
 
 fn is_result_of_x_by_y_larger_than_x(x: i32, y: i32) -> bool {
